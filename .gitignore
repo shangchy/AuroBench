@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# 评测运行产物
+scripts/eval/results/
+
+# PPT 解析临时脚本
+scripts/check_*.py
+scripts/estimate.py
+scripts/export_png.py
+scripts/inspect_ppt.py
+
+# 临时文件与内部文档
+*.png
+*.pptx
