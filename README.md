@@ -5,22 +5,20 @@
 ## 目录结构
 
 ```
-ttt/
-├── docs/                      # 项目文档（规划 + 技术）
+AuroBench/
+├── docs/                  # 项目文档（8 份编号文档）
 ├── scripts/
-│   ├── eval/                  # 自研评测脚本（核心）
-│   │   ├── main.py            #   入口
-│   │   ├── config.py          #   配置
-│   │   ├── questions.py       #   题集（5 维度 15 题）
-│   │   ├── runner.py          #   生成回答（自动发现模型）
-│   │   ├── scorer.py          #   规则 + LLM 裁判打分
-│   │   ├── report.py          #   生成报告
-│   │   └── results/           #   运行产物
-│   └── *.py                   # PPT 解析临时脚本
+│   └── eval/              # 自研评测脚本（核心）
+│       ├── main.py        #   入口
+│       ├── config.py      #   配置
+│       ├── questions.py   #   题集（8 维度 24 题）
+│       ├── runner.py      #   生成回答（自动发现模型）
+│       ├── scorer.py      #   规则 + LLM 裁判打分
+│       └── report.py      #   生成报告
 ├── deploy/
-│   ├── setup.ps1              # 一键部署逻辑
-│   └── setup.bat              # 一键部署入口（双击）
-├── 中国製モデル検証計画-v1.0.pptx   # 原始规划 PPT
+│   ├── setup.ps1          # 一键部署逻辑
+│   └── setup.bat          # 一键部署入口（双击）
+├── .gitignore
 └── README.md
 ```
 
@@ -52,21 +50,21 @@ python main.py
 
 ### 部署到其它 Windows 机器
 
-分发 `deploy\` 与 `scripts\eval\` 后，双击 `deploy\setup.bat`，自动完成 ollama 安装、模型下载（存 D 盘）、依赖安装与脚本部署。
+分发 `deploy\` 与 `scripts\eval\` 后，双击 `deploy\setup.bat`，自动完成 ollama 安装、模型下载、依赖安装与脚本部署。
 
 ## 当前评测结论（初步）
 
-本地部署 6 个开源模型，5 维度 15 题，规则 + LLM 裁判双通道打分：
+本地部署 6 个开源模型，8 维度 24 题，规则 + LLM 裁判双通道打分：
 
 | 排名 | 模型 | 平均分 |
 |------|------|--------|
-| 1 | qwen2.5:3b | 82.1 |
-| 2 | gemma2:2b | 82.1 |
-| 3 | qwen2.5:7b | 82.0 |
-| 4 | qwen2.5:1.5b | 78.4 |
-| 5 | deepseek-r1:1.5b | 74.2 |
-| 6 | llama3.2:3b | 73.2 |
+| 1 | gemma2:2b | 88.0 |
+| 2 | qwen2.5:3b | 87.2 |
+| 3 | qwen2.5:7b | 86.2 |
+| 4 | qwen2.5:1.5b | 82.6 |
+| 5 | llama3.2:3b | 81.6 |
+| 6 | deepseek-r1:1.5b | 80.1 |
 
-- Qwen 系列中文能力领先，`qwen2.5:3b` 性价比最高
-- 中日翻译为普遍短板（平均 50.2 分），是后续重点投入方向
+- 新增维度（多轮对话 96.7、长文本 96.1、信息抽取 88.1）小模型表现普遍较好
+- 中日翻译为普遍短板（平均 50.2 分），是后续云满血模型重点验证方向
 - 详细结果见 `scripts/eval/results/report.md`
