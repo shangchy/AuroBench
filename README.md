@@ -63,7 +63,7 @@ python main.py
 | 3 | qwen2.5:3b | 87.2 |
 | 4 | qwen2.5:7b | 86.2 |
 | 5 | qwen2.5:1.5b | 82.6 |
-| 6 | Seed-Coder-8B | 82.6 |
+| 6 | Seed-Coder-8B（社区版） | 82.6 |
 | 7 | llama3.2:3b | 81.6 |
 | 8 | deepseek-r1:1.5b | 80.1 |
 
