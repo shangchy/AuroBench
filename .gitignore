@@ -5,6 +5,10 @@ __pycache__/
 # 评测运行产物
 scripts/eval/results/
 
+# promptfoo 缓存与输出
+.promptfoo/
+scripts/promptfoo/result.json
+
 # PPT 解析临时脚本
 scripts/check_*.py
 scripts/estimate.py

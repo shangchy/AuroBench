@@ -1,0 +1,36 @@
+model_list:
+  - model_name: qwen2.5:1.5b
+    litellm_params:
+      model: ollama_chat/qwen2.5:1.5b
+      api_base: http://localhost:11434
+  - model_name: qwen2.5:3b
+    litellm_params:
+      model: ollama_chat/qwen2.5:3b
+      api_base: http://localhost:11434
+  - model_name: qwen2.5:7b
+    litellm_params:
+      model: ollama_chat/qwen2.5:7b
+      api_base: http://localhost:11434
+  - model_name: deepseek-r1:1.5b
+    litellm_params:
+      model: ollama_chat/deepseek-r1:1.5b
+      api_base: http://localhost:11434
+  - model_name: llama3.2:3b
+    litellm_params:
+      model: ollama_chat/llama3.2:3b
+      api_base: http://localhost:11434
+  - model_name: gemma2:2b
+    litellm_params:
+      model: ollama_chat/gemma2:2b
+      api_base: http://localhost:11434
+  - model_name: glm4:9b
+    litellm_params:
+      model: ollama_chat/glm4:9b
+      api_base: http://localhost:11434
+  - model_name: seed-coder-8b
+    litellm_params:
+      model: ollama_chat/huihui_ai/seed-coder-abliterate:latest
+      api_base: http://localhost:11434
+
+general_settings:
+  master_key: sk-local-eval
